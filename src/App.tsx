@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import {Helmet} from 'react-helmet';
 import './App.css';
+import FormTemplate from './components/Form';
 
 const title = '俺はtodoアプリを作るぞ！！！！！！';
 const App: FC = () => {
@@ -12,6 +13,7 @@ const App: FC = () => {
       <header className="App-header">
         <h1>{title}</h1>
       </header>
+      <FormTemplate />
     </>
   );
 };
