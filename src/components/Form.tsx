@@ -1,9 +1,10 @@
 import React, {FC} from 'react';
 import {Button, Form} from 'semantic-ui-react';
+import './Form.css';
 
 const FormTemplate: FC = () => {
   return (
-    <Form>
+    <Form className="form-board">
       <Form.Field>
         <label>Title</label>
         <input placeholder="reactの勉強" />
