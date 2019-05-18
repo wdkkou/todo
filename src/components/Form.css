@@ -1,3 +1,6 @@
-.ui.form {
+.form-board {
   margin: 30px;
+}
+.ui.form .field > label {
+  font-size: 2em;
 }

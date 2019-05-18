@@ -6,7 +6,7 @@ const FormTemplate: FC = () => {
   return (
     <Form className="form-board">
       <Form.Field>
-        <label>Title</label>
+        <label className="todo-title">todo title</label>
         <input placeholder="reactの勉強" />
       </Form.Field>
       <Form.Field>
