@@ -16,3 +16,5 @@ const Todolist: FC<TodoListProps> = todos => (
     <Table />
   </>
 );
+
+export default Todolist;

@@ -1,7 +1,7 @@
-import React from 'react';
-import {Icon, Label, Menu, Table} from 'semantic-ui-react';
+import React, {FC} from 'react';
+import {Label, Table} from 'semantic-ui-react';
 
-const TableExamplePagination = () => (
+const TableTemplate: FC = () => (
   <Table celled>
     <Table.Header>
       <Table.Row>
@@ -28,4 +28,4 @@ const TableExamplePagination = () => (
   </Table>
 );
 
-export default Table;
+export default TableTemplate;
