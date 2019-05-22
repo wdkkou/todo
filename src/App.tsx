@@ -12,6 +12,11 @@ const App: FC = () => {
       title: 'react',
       description: 'typescriptで勉強',
     },
+    {
+      id: 2,
+      title: '研究',
+      description: '完全定義',
+    },
   ];
   return (
     <>
