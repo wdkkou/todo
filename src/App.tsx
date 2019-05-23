@@ -19,7 +19,10 @@ const App: FC = () => {
     },
   ];
   const [Todos, setTodos] = useState(todos);
-  const create = () => {};
+  const create = () => {
+    let data: Todo;
+    setTodos([...Todos, data]);
+  };
   const dele = () => {};
   return (
     <>
@@ -29,7 +32,8 @@ const App: FC = () => {
       <header className="App-header">
         <h1>{title}</h1>
       </header>
-      <FormTemplate create={create} dele={dele} />
+      console.log({Todos[0].title});
+      <FormTemplate create={create()} />
       <Todolist todos={Todos} />
     </>
   );

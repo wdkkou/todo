@@ -7,6 +7,7 @@ export interface Todo {
   id: number;
   title: string;
   description?: string;
+  this.state.click.bind();
 }
 interface TodoListProps {
   todos: Todo[];

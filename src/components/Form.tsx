@@ -4,10 +4,9 @@ import './Form.css';
 import Todolist, {Todo} from './Todolist';
 
 interface FormProps {
-  create: () => void;
-  dele: () => void;
+  create?: (Todos: Todo[]) => void;
 }
-const FormTemplate: FC<FormProps> = ({create, dele}) => {
+const FormTemplate: FC<FormProps> = ({create}) => {
   return (
     <Form className="form-board">
       <Form.Field>
@@ -17,7 +16,9 @@ const FormTemplate: FC<FormProps> = ({create, dele}) => {
       <Form.Field>
         <textarea name="description" placeholder="詳細" />
       </Form.Field>
-      <Button type="submit">create</Button>
+      {/* <Button type="submit" onClick={create}>
+        create
+      </Button> */}
     </Form>
   );
 };
