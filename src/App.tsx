@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {Helmet} from 'react-helmet';
 import './App.css';
 import FormTemplate from './components/Form';
@@ -18,6 +18,9 @@ const App: FC = () => {
       description: '完全定義',
     },
   ];
+  const [Todos, setTodos] = useState(todos);
+  const create = () => {};
+  const dele = () => {};
   return (
     <>
       <Helmet htmlAttributes={{lang: 'ja'}}>
@@ -26,8 +29,8 @@ const App: FC = () => {
       <header className="App-header">
         <h1>{title}</h1>
       </header>
-      <FormTemplate />
-      <Todolist todos={todos} />
+      <FormTemplate create={create} dele={dele} />
+      <Todolist todos={Todos} />
     </>
   );
 };

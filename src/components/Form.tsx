@@ -1,8 +1,13 @@
 import React, {FC} from 'react';
 import {Button, Form} from 'semantic-ui-react';
 import './Form.css';
+import Todolist, {Todo} from './Todolist';
 
-const FormTemplate: FC = () => {
+interface FormProps {
+  create: () => void;
+  dele: () => void;
+}
+const FormTemplate: FC<FormProps> = ({create, dele}) => {
   return (
     <Form className="form-board">
       <Form.Field>
