@@ -2,3 +2,9 @@
   margin: 30px !important;
   width: 90% !important;
 }
+.delete-button {
+  float: right;
+  color: white !important;
+  /* background-color: #248 !important; */
+  background: red !important;
+}

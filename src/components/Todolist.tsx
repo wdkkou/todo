@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Table, Label} from 'semantic-ui-react';
+import {Table, Label, Button} from 'semantic-ui-react';
 //import Table from './Tabletemplate';
 import './Table.css';
 
@@ -22,12 +22,17 @@ const Todolist: FC<TodoListProps> = ({todos}) => (
         </Table.Row>
       </Table.Header>
       {todos.map(todo => (
-        <Table.Body>
+        <Table.Body key={todo.id}>
           <Table.Row>
             <Table.Cell>
               <Label>{todo.title}</Label>
             </Table.Cell>
-            <Table.Cell>{todo.description}</Table.Cell>
+            <Table.Cell>
+              {todo.description}
+              <Button type="submit" className="delete-button">
+                delete
+              </Button>
+            </Table.Cell>
           </Table.Row>
           <Table.Row />
           <Table.Row />
