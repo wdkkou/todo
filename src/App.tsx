@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {Helmet} from 'react-helmet';
 import './App.css';
 import FormTemplate from './components/Form';
@@ -10,20 +10,37 @@ const App: FC = () => {
     {
       id: 1,
       title: 'react',
-      description: 'typescriptで勉強',
+      description: 'typescriptの使い方',
     },
     {
       id: 2,
-      title: '研究',
-      description: '完全定義',
+      title: 'react',
+      description: 'hooksの使い方',
     },
   ];
   const [Todos, setTodos] = useState(todos);
-  const create = () => {
-    let data: Todo;
-    setTodos([...Todos, data]);
+  const create = (e: Event) => {
+    // let element:
+    e.preventDefault();
+    console.log((e.target as HTMLInputElement).title);
+    const data: Todo = {
+      id: Todos.length + 1,
+      title: '',
+      description: 'example',
+    };
+    setTodos(() => [...Todos, data]);
+    console.log('create ok');
   };
-  const dele = () => {};
+  // const del = () => {
+  //   const id = 1;
+  //   Todos.splice(id, 1);
+  //   setTodos([...Todos]);
+  // };
+  const del = (id: number) => {
+    Todos.splice(id, 1);
+    setTodos([...Todos]);
+    console.log('delte ok');
+  };
   return (
     <>
       <Helmet htmlAttributes={{lang: 'ja'}}>
@@ -32,9 +49,10 @@ const App: FC = () => {
       <header className="App-header">
         <h1>{title}</h1>
       </header>
-      console.log({Todos[0].title});
-      <FormTemplate create={create()} />
-      <Todolist todos={Todos} />
+      {console.log(Todos)}
+      <FormTemplate create={create} todos={Todos} />
+      <Todolist todos={Todos} del={del} />
+      {console.log(Todos)}
     </>
   );
 };
