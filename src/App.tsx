@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState, SyntheticEvent} from 'react';
+import React, {FC, useEffect, useState, FormEvent} from 'react';
 import {Helmet} from 'react-helmet';
 import './App.css';
 import FormTemplate from './components/Form';
@@ -31,23 +31,37 @@ const App: FC = () => {
   //   console.log(d);
   //   console.log('create');
   // };
-  const create = (e: SyntheticEvent) => {
+  // const create = (e: FormEvent) => {
+  //   const data: Todo = {
+  //     id: Todos.length + 1,
+  //     title: 'aaa',
+  //     description: 'redux',
+  //   };
+  //   setTodos([...Todos, data]);
+  //   console.log(Todos);
+  //   e.preventDefault();
+  //   console.log((e.target as HTMLElement).title);
+  //   console.log((e.target as HTMLInputElement).value);
+  //   console.log(e.target as HTMLElement);
+  //   console.log(e.target);
+  //   console.log('create');
+  // };
+  const create = (t: string, d: string) => {
     const data: Todo = {
-      id: Todos.length,
-      title: 'aaa',
-      description: 'redux',
+      id: Todos.length + 1,
+      title: t,
+      description: d,
     };
     setTodos([...Todos, data]);
     console.log(Todos);
-    e.preventDefault();
-    console.log((e.target as HTMLElement).title);
-    console.log(e.target as HTMLElement);
-    console.log('create');
+    console.log(t);
+    console.log(d);
   };
   const dele = (id: number) => {
     Todos.splice(id, 1);
     setTodos(Todos);
     console.log(Todos);
+    console.log('id = ' + id);
     console.log('delete');
   };
   return (
