@@ -20,10 +20,20 @@ const App: FC = () => {
   ];
   const [Todos, setTodos] = useState(todos);
   const create = () => {
-    let data: Todo;
+    const data: Todo = {
+      id: 3,
+      title: 'react',
+      description: 'redux',
+    };
     setTodos([...Todos, data]);
+    console.log(Todos);
+    console.log('create');
   };
-  const dele = () => {};
+  const dele = (id: number) => {
+    Todos.splice(id, 1);
+    setTodos(Todos);
+    console.log('delete');
+  };
   return (
     <>
       <Helmet htmlAttributes={{lang: 'ja'}}>
@@ -33,7 +43,7 @@ const App: FC = () => {
         <h1>{title}</h1>
       </header>
       console.log({Todos[0].title});
-      <FormTemplate create={create()} />
+      <FormTemplate create={create} />
       <Todolist todos={Todos} />
     </>
   );
