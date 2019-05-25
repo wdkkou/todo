@@ -7,13 +7,13 @@ export interface Todo {
   id: number;
   title: string;
   description?: string;
-  this.state.click.bind();
 }
 interface TodoListProps {
   todos: Todo[];
+  dele: (id: number) => void;
 }
 
-const Todolist: FC<TodoListProps> = ({todos}) => (
+const Todolist: FC<TodoListProps> = ({todos, dele}) => (
   <>
     <Table celled className="table-board">
       <Table.Header>
@@ -22,7 +22,7 @@ const Todolist: FC<TodoListProps> = ({todos}) => (
           <Table.HeaderCell>Description</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
-      {todos.map(todo => (
+      {todos.map((todo, index) => (
         <Table.Body key={todo.id}>
           <Table.Row>
             <Table.Cell>
@@ -30,7 +30,11 @@ const Todolist: FC<TodoListProps> = ({todos}) => (
             </Table.Cell>
             <Table.Cell>
               {todo.description}
-              <Button type="submit" className="delete-button">
+              <Button
+                type="submit"
+                className="delete-button"
+                onClick={() => dele(index)}
+              >
                 delete
               </Button>
             </Table.Cell>

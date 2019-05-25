@@ -1,24 +1,31 @@
-import React, {FC} from 'react';
+import React, {FC, SyntheticEvent} from 'react';
 import {Button, Form} from 'semantic-ui-react';
 import './Form.css';
-import Todolist, {Todo} from './Todolist';
 
 interface FormProps {
-  create?: (Todos: Todo[]) => void;
+  // create: (t: string, d: string) => void;
+  create: (e: SyntheticEvent) => void;
+  title?: string;
+  description?: string;
 }
-const FormTemplate: FC<FormProps> = ({create}) => {
+const FormTemplate: FC<FormProps> = ({
+  create,
+  title = '',
+  description = '',
+}) => {
   return (
     <Form className="form-board">
       <Form.Field>
         <label className="todo-title">todo title</label>
-        <input placeholder="reactの勉強" />
+        <input name="title" placeholder="reactの勉強" />
       </Form.Field>
       <Form.Field>
-        <textarea name="description" placeholder="詳細" />
+        <textarea name="desc" placeholder="詳細" />
       </Form.Field>
-      {/* <Button type="submit" onClick={create}>
+      {/* e.targetとかやったけどわからん */}
+      <Form.Button type="submit" onClick={e => create(e)}>
         create
-      </Button> */}
+      </Form.Button>
     </Form>
   );
 };
