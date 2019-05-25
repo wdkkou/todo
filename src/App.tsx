@@ -10,12 +10,12 @@ const App: FC = () => {
     {
       id: 1,
       title: 'react',
-      description: 'typescriptで勉強',
+      description: 'typescriptの使い方',
     },
     {
       id: 2,
-      title: '研究',
-      description: '完全定義',
+      title: 'react',
+      description: 'hooksの使い方',
     },
   ];
   const [Todos, setTodos] = useState(todos);
