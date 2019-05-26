@@ -23,7 +23,7 @@ const FormTemplate: FC<FormProps> = ({create, title = '', desc = ''}) => {
         <label className="todo-title">todo title</label>
         <input
           name="title"
-          placeholder="reactの勉強"
+          placeholder="タイトル"
           onChange={e => changeInput(e)}
         />
       </Form.Field>
