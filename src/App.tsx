@@ -1,8 +1,8 @@
-import React, {FC, useState} from 'react';
-import {Helmet} from 'react-helmet';
+import React, { FC, useState } from 'react';
+// import {Helmet} from 'react-helmet';
 import './App.css';
 import FormTemplate from './components/Form';
-import Todolist, {Todo} from './components/Todolist';
+import Todolist, { Todo } from './components/Todolist';
 
 const title = '俺はtodoアプリを作るぞ！！！！！！';
 const App: FC = () => {
@@ -26,11 +26,12 @@ const App: FC = () => {
     Todos.splice(id, 1);
     setTodos([...Todos]);
   };
+
   return (
     <>
-      <Helmet htmlAttributes={{lang: 'ja'}}>
-        <title>{title}</title>
-      </Helmet>
+      {/* <Helmet htmlAttributes={{lang: 'ja'}}> */}
+      <title>{title}</title>
+      {/* </Helmet> */}
       <header className="App-header">
         <h1>{title}</h1>
       </header>
