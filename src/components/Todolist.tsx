@@ -1,6 +1,5 @@
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 import {Table, Label, Button} from 'semantic-ui-react';
-//import Table from './Tabletemplate';
 import './Table.css';
 
 export interface Todo {
