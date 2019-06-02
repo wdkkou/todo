@@ -1,10 +1,10 @@
-import React, { FC, useState } from 'react';
+import React, {FC, useState} from 'react';
 // import {Helmet} from 'react-helmet';
 import './App.css';
 import FormTemplate from './components/Form';
-import Todolist, { Todo } from './components/Todolist';
+import Todolist, {Todo} from './components/Todolist';
 
-const title = '俺はtodoアプリを作るぞ！！！！！！';
+const title = 'reactでtodoアプリ';
 const App: FC = () => {
   const todos: Todo[] = [
     {
