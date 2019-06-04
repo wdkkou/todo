@@ -1,5 +1,5 @@
-import React, {FC} from 'react';
-import {Table, Label, Button} from 'semantic-ui-react';
+import React, { FC } from 'react';
+import { Table, Label, Button } from 'semantic-ui-react';
 import './Table.css';
 
 export interface Todo {
@@ -12,7 +12,7 @@ interface TodoListProps {
   dele: (id: number) => void;
 }
 
-const Todolist: FC<TodoListProps> = ({todos, dele}) => {
+const Todolist: FC<TodoListProps> = ({ todos, dele }) => {
   return (
     <>
       <Table celled className="table-board">
