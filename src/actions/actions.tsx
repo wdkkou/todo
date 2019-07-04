@@ -5,7 +5,17 @@ export enum TodoActionType {
 
 export interface TodoAction {
   type: TodoActionType;
+  text?: string;
+  id?: number;
 }
-export const add = (): TodoAction => ({ type: TodoActionType.ADD });
+let todoId = 0;
+export const add = (text: string): TodoAction => ({
+  type: TodoActionType.ADD,
+  text,
+  id: todoId++,
+});
 
-export const dele = (): TodoAction => ({ type: TodoActionType.DELETE });
+export const dele = (id: number): TodoAction => ({
+  type: TodoActionType.DELETE,
+  id,
+});
