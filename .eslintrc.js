@@ -69,6 +69,8 @@ module.exports = {
         classPropertiesAllowed: false,
       },
     ],
+    // no-plusplus
+    'no-plusplus': 'off',
 
     // react
     'react/jsx-filename-extension': [
