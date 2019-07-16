@@ -1,13 +1,12 @@
 import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
+import { Dispatch } from 'redux';
 
 import { add, dele } from '../actions/actions';
-import { TodosState } from '../reducer';
 import Form from '../components/Form';
-import Todolist from '../components/Todolist';
+import { TodosState } from '../reducer';
 
 interface StateProps {
-  todos: TodosState;
+  todo: TodosState;
 }
 interface DispatchProps {
   add: (text: string) => void;
@@ -15,7 +14,7 @@ interface DispatchProps {
 }
 
 const mapStateToProps = (state: TodosState): StateProps => ({
-  todos: state,
+  todo: state,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
