@@ -1,5 +1,4 @@
 import { Reducer } from 'redux';
-import { stat } from 'fs';
 import { TodoAction, TodoActionType } from './actions/actions';
 
 export interface TodoState {
@@ -27,6 +26,7 @@ const todoReducer: Reducer<TodosState, TodoAction> = (
       return {
         ...state,
         todos: [{ id: action.id }],
+        // idのtodoをdelete
       };
     default: {
       return { ...state };
