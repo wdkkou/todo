@@ -6,7 +6,7 @@ import Form from '../components/Form';
 import { TodosState } from '../reducer';
 
 interface StateProps {
-  todo: TodosState;
+  todos: TodosState;
 }
 interface DispatchProps {
   add: (text: string) => void;
@@ -14,7 +14,7 @@ interface DispatchProps {
 }
 
 const mapStateToProps = (state: TodosState): StateProps => ({
-  todo: state,
+  todos: state,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
