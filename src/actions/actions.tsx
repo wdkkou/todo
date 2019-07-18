@@ -11,8 +11,8 @@ export interface TodoAction {
 let todoId = 0;
 export const add = (text: string): TodoAction => ({
   type: TodoActionType.ADD,
-  text,
   id: todoId++,
+  text,
 });
 
 export const dele = (id: number): TodoAction => ({
