@@ -6,21 +6,21 @@ export interface TodoState {
   id?: number;
 }
 export interface TodosState {
-  todos?: TodoState[];
+  todos: TodoState[];
 }
 export const initialState: TodosState = {
   todos: [{ text: 'Lern redux', id: 0 }],
 };
 
 const todoReducer: Reducer<TodosState, TodoAction> = (
-  state,
-  action,
+  state: TodosState = initialState,
+  action: TodoAction,
 ): TodosState => {
   switch (action.type) {
     case TodoActionType.ADD:
       return {
         ...state,
-        todos: [{ text: action.text }],
+        todos: [{ id: action.id, text: action.text }],
       };
     case TodoActionType.DELETE:
       return {
@@ -29,7 +29,7 @@ const todoReducer: Reducer<TodosState, TodoAction> = (
         // idのtodoをdelete
       };
     default: {
-      return { ...state };
+      return state;
     }
   }
 };
