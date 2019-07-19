@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Table, Label, Button } from 'semantic-ui-react';
-import { TodosState } from '../reducer';
+import { TodoState } from '../reducer';
 import './Table.css';
 
 // export interface Todo {
@@ -16,7 +16,7 @@ import './Table.css';
 
 interface TodoListProps {
   // todos: Todo[];
-  todos: TodosState;
+  todos: TodoState[];
   dele: (id: number) => void;
 }
 
@@ -34,7 +34,7 @@ const Todolist: FC<TodoListProps> = ({ todos, dele }) => {
           <Table.Body key={todo.id}>
             <Table.Row>
               <Table.Cell>
-                <Label>{todo.title}</Label>
+                <Label>{todo.text}</Label>
               </Table.Cell>
               <Table.Cell>
                 {/* {todo.description} */}

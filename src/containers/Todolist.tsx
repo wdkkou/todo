@@ -3,17 +3,17 @@ import { Dispatch } from 'redux';
 
 import { dele } from '../actions/actions';
 import Todolist from '../components/Todolist';
-import { TodosState } from '../reducer';
+import { TodosState, TodoState } from '../reducer';
 
 interface StateProps {
-  todo: TodosState;
+  todos: TodoState[];
 }
 interface DispatchProps {
   dele: (id: number) => void;
 }
 
 const mapStateToProps = (state: TodosState): StateProps => ({
-  todo: state,
+  todos: state.todos,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
