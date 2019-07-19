@@ -1,46 +1,55 @@
-import React, { FC, SyntheticEvent, useState } from 'react';
-import { Form } from 'semantic-ui-react';
+import React, { FC } from 'react';
+import { Form, Button } from 'semantic-ui-react';
 import './Form.css';
 
 interface FormProps {
-  text?: string;
+  title?: string;
   description?: string;
   add?: (text: string, description: string) => void;
 }
 
-const FormTodo: FC<FormProps> = ({
-  text = '',
-  description = '',
-  add = () => {},
-}) => {
-  const [Title, setTitle] = useState(text);
-  const [Description, setDescription] = useState(description);
-  // inputに入力が行われた際にstateを変更する関数
-  const changeInput = (e: SyntheticEvent) => {
-    setTitle((e.target as HTMLInputElement).value);
-  };
-  // textareaに入力が行われた際にstateを変更する関数
-  const changeTextArea = (e: SyntheticEvent) => {
-    setDescription((e.target as HTMLInputElement).value);
-  };
+const FormTodo: FC<FormProps> = ({ add = () => {} }) => {
+  let title: HTMLInputElement | null;
+  let description: HTMLTextAreaElement | null;
 
   return (
-    <Form className="form-board" onSubmit={() => add(Title, Description)}>
+    <Form className="form-board">
       <Form.Field>
         <input
           name="title"
           placeholder="タイトル"
-          onChange={e => changeInput(e)}
+          ref={node => {
+            title = node;
+          }}
         />
       </Form.Field>
       <Form.Field>
         <textarea
           name="desc"
           placeholder="詳細"
-          onChange={e => changeTextArea(e)}
+          ref={node => {
+            description = node;
+          }}
         />
       </Form.Field>
-      <Form.Button content="Add Todo" />
+      <Button
+        onClick={() => {
+          add(
+            title == null ? '' : title.value,
+            description == null ? '' : description.value,
+          );
+          (title =
+            title == null
+              ? (document.getElementById('id') as HTMLInputElement)
+              : title).value = '';
+          (description =
+            description == null
+              ? (document.getElementById('id') as HTMLTextAreaElement)
+              : description).value = '';
+        }}
+      >
+        Add
+      </Button>
     </Form>
   );
 };
