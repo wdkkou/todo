@@ -2,32 +2,31 @@ import { Reducer } from 'redux';
 import { TodoAction, TodoActionType } from './actions/actions';
 
 export interface TodoState {
-  text?: string;
   id?: number;
+  text?: string;
 }
-export interface TodosState {
-  todos: TodoState[];
-}
-export const initialState: TodosState = {
-  todos: [{ text: 'Lern redux', id: 0 }],
+// export interface TodosState {
+//   todos: TodoState[];
+// }
+export const initialState: TodoState = {
+  id: 0,
+  text: 'Learn redux',
 };
 
-const todoReducer: Reducer<TodosState, TodoAction> = (
-  state: TodosState = initialState,
+const todoReducer: Reducer<TodoState[], TodoAction> = (
+  state: TodoState[] = [],
   action: TodoAction,
-): TodosState => {
+): TodoState[] => {
   switch (action.type) {
     case TodoActionType.ADD:
-      return {
-        ...state,
-        todos: [{ id: action.id, text: action.text }],
-      };
+      // state.push({ id: action.id, text: action.text });
+
+      // return [...state];
+      return [...state, { id: action.id, text: action.text }];
     case TodoActionType.DELETE:
-      return {
-        ...state,
-        todos: [{ id: action.id }],
-        // idのtodoをdelete
-      };
+      state.splice(action.id || 0, 1);
+
+      return [...state];
     default: {
       return state;
     }
