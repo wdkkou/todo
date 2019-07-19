@@ -3,19 +3,7 @@ import { Table, Label, Button } from 'semantic-ui-react';
 import { TodoState } from '../reducer';
 import './Table.css';
 
-// export interface Todo {
-//   id: number;
-//   title: string;
-//   description?: string;
-// }
-
-// interface TodoListProps {
-//   todos: Todo[];
-//   dele: (id: number) => void;
-// }
-
 interface TodoListProps {
-  // todos: Todo[];
   todos: TodoState[];
   dele: (id: number) => void;
 }
@@ -27,7 +15,7 @@ const Todolist: FC<TodoListProps> = ({ todos, dele }) => {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Title</Table.HeaderCell>
-            {/* <Table.HeaderCell>Description</Table.HeaderCell> */}
+            <Table.HeaderCell>Description</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         {todos.map((todo, index) => (
@@ -37,7 +25,7 @@ const Todolist: FC<TodoListProps> = ({ todos, dele }) => {
                 <Label>{todo.text}</Label>
               </Table.Cell>
               <Table.Cell>
-                {/* {todo.description} */}
+                {todo.description}
                 <Button
                   type="submit"
                   className="delete-button"
