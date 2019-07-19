@@ -9,7 +9,7 @@ export interface TodoAction {
   description?: string;
   id?: number;
 }
-let todoId = 0;
+let todoId = 1;
 export const add = (text: string, description: string): TodoAction => ({
   type: TodoActionType.ADD,
   id: todoId++,
