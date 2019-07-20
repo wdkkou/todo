@@ -8,9 +8,9 @@ const title = 'reactでtodoアプリ';
 const App: FC = () => {
   return (
     <>
-      <Helmet>
-        <title> React todoアプリ</title>
-      </Helmet>
+      {/* <Helmet> */}
+      <title> React todoアプリ</title>
+      {/* </Helmet> */}
       <header className="App-header">
         <h1>{title}</h1>
       </header>
