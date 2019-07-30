@@ -9,7 +9,7 @@ const App: FC = () => {
   return (
     <>
       <Helmet>
-        <title> React todoアプリ</title>
+        <title> todoアプリ react-redux </title>
       </Helmet>
       <header className="App-header">
         <h1>{title}</h1>
