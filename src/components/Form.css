@@ -2,6 +2,11 @@
   margin: 30px;
 }
 
-.ui.form .field > label {
+/* .ui.form .field > label {
   font-size: 2em;
+} */
+
+.add-button {
+  background: blue !important;
+  color: white !important;
 }

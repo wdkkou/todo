@@ -33,19 +33,12 @@ const FormTodo: FC<FormProps> = ({ add = () => {} }) => {
         />
       </Form.Field>
       <Button
+        className="add-button"
         onClick={() => {
           add(
             title == null ? '' : title.value,
             description == null ? '' : description.value,
           );
-          (title =
-            title == null
-              ? (document.getElementById('id') as HTMLInputElement)
-              : title).value = '';
-          (description =
-            description == null
-              ? (document.getElementById('id') as HTMLTextAreaElement)
-              : description).value = '';
         }}
       >
         Add
