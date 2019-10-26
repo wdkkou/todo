@@ -12,11 +12,11 @@ interface TodoListProps {
 const Todolist: FC<TodoListProps> = ({ todos, dele }) => {
   return (
     <>
-      <Table celled className="table-board">
+      <Table striped className="table-board">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Title</Table.HeaderCell>
-            <Table.HeaderCell>Description</Table.HeaderCell>
+            <Table.HeaderCell colSpan="2">Description</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         {todos.map((todo, index) => (
@@ -31,6 +31,8 @@ const Todolist: FC<TodoListProps> = ({ todos, dele }) => {
               <Table.Cell>
                 <Todo text={todo.description || ''} completed />
                 {/* {todo.description} */}
+              </Table.Cell>
+              <Table.Cell>
                 <Button
                   type="submit"
                   className="delete-button"

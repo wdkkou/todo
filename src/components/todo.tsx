@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import './todo.css';
 
 interface TodoProps {
   text: string;
@@ -7,7 +8,10 @@ interface TodoProps {
 const Todo: FC<TodoProps> = ({ text, completed = true }) => {
   return (
     <>
-      <div style={{ textDecoration: completed ? 'line-through' : 'none' }}>
+      <div
+        className="text-div"
+        style={{ textDecoration: completed ? 'line-through' : 'none' }}
+      >
         {text}
       </div>
     </>
